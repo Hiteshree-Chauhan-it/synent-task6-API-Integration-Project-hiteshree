@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Cookie&family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Dr+Sugiyama&family=Gloock&family=Handlee&family=IM+Fell+Double+Pica:ital@0;1&family=Kalam:wght@300;400;700&family=Katibeh&family=Luckiest+Guy&family=Monomakh&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb--1" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--2" aria-hidden="true"></div>
+    <main class="page">
+      <header class="header">
+        <div class="header__logo">
+          <span class="logo-icon">⛅</span>
+          <span class="logo-text">Weatherly</span>
+        </div>
+        <p class="header__tagline">Real-time weather at your fingertips</p>
+      </header>
+      <section class="card search-card" aria-label="Search weather">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="cityInput"
+            class="search-input"
+            placeholder="Enter city name…"
+            autocomplete="off"
+            aria-label="City name"
+          />
+          <button id="searchBtn" class="btn btn--primary" aria-label="Search">
+            <span class="btn__label">Search</span>
+            <span class="btn__icon">→</span>
+          </button>
+        </div>
+        <div id="lastSearchChip" class="chip-row" hidden>
+          <span class="chip-label">Last search:</span>
+          <button
+            id="lastSearchBtn"
+            class="chip"
+            aria-label="Repeat last search"
+          ></button>
+        </div>
+      </section>
+      <div
+        id="loader"
+        class="loader"
+        hidden
+        aria-live="polite"
+        aria-label="Loading weather data"
+      >
+        <div class="spinner"></div>
+        <p class="loader__text">Fetching weather…</p>
+      </div>
+
+      <div id="errorBox" class="error-box" hidden role="alert">
+        <span class="error-box__icon">⚠</span>
+        <p id="errorMsg" class="error-box__msg"></p>
+      </div>
+
+      <section
+        id="weatherCard"
+        class="card weather-card"
+        hidden
+        aria-live="polite"
+      >
+        <div class="weather-card__top">
+          <div>
+            <h2 id="cityName" class="weather-city"></h2>
+            <p id="weatherDate" class="weather-date"></p>
+          </div>
+          <button
+            id="refreshBtn"
+            class="btn btn--ghost"
+            aria-label="Refresh weather"
+          >
+            <span id="refreshIcon" class="refresh-icon">↻</span> Refresh
+          </button>
+        </div>
+
+        <div class="weather-main">
+          <div class="weather-icon-wrap">
+            <img
+              id="weatherIcon"
+              class="weather-icon"
+              src=""
+              alt="Weather condition icon"
+            />
+          </div>
+          <div class="weather-temp-wrap">
+            <span id="temperature" class="weather-temp"></span>
+            <span id="feelsLike" class="weather-feels"></span>
+          </div>
+          <div class="weather-desc-wrap">
+            <p id="weatherDesc" class="weather-desc"></p>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <span class="stat-tile__icon">💧</span>
+            <span class="stat-tile__label">Humidity</span>
+            <span id="humidity" class="stat-tile__value"></span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">💨</span>
+            <span class="stat-tile__label">Wind</span>
+            <span id="windSpeed" class="stat-tile__value"></span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">👁</span>
+            <span class="stat-tile__label">Visibility</span>
+            <span id="visibility" class="stat-tile__value"></span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">🌡</span>
+            <span class="stat-tile__label">Pressure</span>
+            <span id="pressure" class="stat-tile__value"></span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">🌅</span>
+            <span class="stat-tile__label">Sunrise</span>
+            <span id="sunrise" class="stat-tile__value"></span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">🌇</span>
+            <span class="stat-tile__label">Sunset</span>
+            <span id="sunset" class="stat-tile__value"></span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Built with ❤ using the Fetch API &amp; OpenWeatherMap</p>
+      </footer>
+    </main>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
