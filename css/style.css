@@ -1,5 +1,4 @@
 :root {
-  /* Palette */
   --clr-bg:        #0d1117;
   --clr-surface:   rgba(255, 255, 255, 0.05);
   --clr-border:    rgba(255, 255, 255, 0.10);
@@ -8,22 +7,17 @@
   --clr-danger:    #ff6b6b;
   --clr-text:      #e8eaf0;
   --clr-muted:     rgba(232, 234, 240, 0.50);
-
-  /* Orbs */
   --orb1: radial-gradient(circle at 30% 30%, #2a6496 0%, transparent 60%);
   --orb2: radial-gradient(circle at 70% 70%, #6d3b47 0%, transparent 60%);
 
-  /* Typography */
   --font-display: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
-  /* Spacing */
   --radius-card: 20px;
   --radius-btn:  12px;
   --gap:         1.5rem;
 }
 
-/* ── RESET & BASE ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -39,12 +33,10 @@ body {
   color: var(--clr-text);
   min-height: 100vh;
   overflow-x: hidden;
-  /* subtle dot-grid texture */
   background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
-/* ── BACKGROUND ORBS ── */
 .bg-orb {
   position: fixed;
   border-radius: 50%;
@@ -76,7 +68,6 @@ body {
   to { transform: translate(-50px, -70px); }
 }
 
-/* ── PAGE LAYOUT ── */
 .page {
   position: relative;
   z-index: 1;
@@ -88,7 +79,6 @@ body {
   gap: var(--gap);
 }
 
-/* ── HEADER ── */
 .header {
   text-align: center;
   animation: fadeSlideDown 0.6s ease both;
@@ -113,7 +103,6 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ── CARD (reusable) ── */
 .card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
@@ -124,7 +113,6 @@ body {
   animation: fadeSlideUp 0.5s ease both;
 }
 
-/* ── SEARCH CARD ── */
 .search-card { animation-delay: 0.1s; }
 
 .search-wrapper {
@@ -132,7 +120,6 @@ body {
   gap: 0.75rem;
 }
 
-/* Input */
 .search-input {
   flex: 1;
   background: rgba(255,255,255,0.07);
@@ -150,8 +137,6 @@ body {
   border-color: var(--clr-accent);
   box-shadow: 0 0 0 3px rgba(247, 201, 72, 0.18);
 }
-
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -188,8 +173,6 @@ body {
   background: rgba(255,255,255,0.12);
   transform: translateY(-1px);
 }
-
-/* Last search chip */
 .chip-row {
   display: flex;
   align-items: center;
@@ -216,7 +199,6 @@ body {
 }
 .chip:hover { background: rgba(79,195,247,0.22); }
 
-/* ── LOADER ── */
 .loader {
   display: flex;
   flex-direction: column;
@@ -231,7 +213,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* Spinner ring */
 .spinner {
   width: 46px;
   height: 46px;
@@ -244,7 +225,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* ── ERROR BOX ── */
 .error-box {
   display: flex;
   align-items: flex-start;
@@ -266,8 +246,6 @@ body {
   color: var(--clr-danger);
   line-height: 1.5;
 }
-
-/* ── WEATHER CARD ── */
 .weather-card { animation-delay: 0.05s; }
 
 .weather-card__top {
@@ -290,7 +268,6 @@ body {
   margin-top: 0.2rem;
 }
 
-/* Rotating refresh icon */
 .refresh-icon {
   display: inline-block;
   font-size: 1.1rem;
@@ -300,7 +277,6 @@ body {
   animation: spin 0.6s linear infinite;
 }
 
-/* Main weather display */
 .weather-main {
   display: flex;
   align-items: center;
@@ -325,7 +301,6 @@ body {
 .weather-icon {
   width: 64px;
   height: 64px;
-  /* OpenWeatherMap icons can be small — scale up cleanly */
   image-rendering: crisp-edges;
 }
 
@@ -354,8 +329,6 @@ body {
   letter-spacing: 0.02em;
   font-weight: 500;
 }
-
-/* Stats grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -378,15 +351,12 @@ body {
 .stat-tile__label { font-size: 0.72rem; color: var(--clr-muted); text-transform: uppercase; letter-spacing: 0.07em; }
 .stat-tile__value { font-size: 1rem; font-weight: 500; color: var(--clr-text); }
 
-/* ── FOOTER ── */
 .footer {
   text-align: center;
   font-size: 0.78rem;
   color: var(--clr-muted);
   padding-top: 0.5rem;
 }
-
-/* ── KEYFRAME ANIMATIONS ── */
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -407,7 +377,6 @@ body {
   80%       { transform: translateX(4px); }
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 520px) {
   .search-wrapper   { flex-direction: column; }
   .btn--primary     { width: 100%; justify-content: center; }
