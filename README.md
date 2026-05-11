@@ -26,7 +26,7 @@ No frameworks or libraries were used — just pure HTML5, CSS3, and Vanilla Java
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Desktop Hero](images/hero-desktop.png) | ![Mobile Hero](images/hero-mobile.png) |
+| ![Desktop Hero](images/hero-dekstop.png) | ![Mobile Hero](images/hero-mobile.png) |
 
 ---
 
@@ -34,7 +34,7 @@ No frameworks or libraries were used — just pure HTML5, CSS3, and Vanilla Java
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Desktop Output](images/output-desktop.png) | ![Mobile Output](images/output-mobile.png) |
+| ![Desktop Output](images/output-dekstop.png) | ![Mobile Output](images/output-mobile.png) |
 
 ---
 
